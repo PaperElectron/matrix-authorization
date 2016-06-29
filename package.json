@@ -10,6 +10,11 @@
     "test-report": "NODE_ENV=test tap -R spec --cov --coverage-report=lcov test/unit/*.js test/integration/**/*.js",
     "test-file": "NODE_ENV=test tap -R spec --cov"
   },
+  "files": [
+    "index.js",
+    "lib/",
+    "Readme.md"
+  ],
   "keywords": [
     "authorization",
     "matrix"
