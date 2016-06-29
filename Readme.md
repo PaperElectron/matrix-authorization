@@ -3,7 +3,7 @@
 Node based permission checks in Node.
 
 [![Build Status](https://travis-ci.org/PaperElectron/matrix-authorization.svg?branch=master)](https://travis-ci.org/PaperElectron/matrix-authorization)
-
+[![Coverage Status](https://coveralls.io/repos/github/PaperElectron/matrix-authorization/badge.svg?branch=master)](https://coveralls.io/github/PaperElectron/matrix-authorization?branch=master)
 
 ### API
 ```javascript
