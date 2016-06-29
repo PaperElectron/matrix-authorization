@@ -71,11 +71,48 @@ tap.test('Checks multiple named permissions correctly', function(t) {
   t.ok(f1({resource: ['create'], upload: ['*'], event: '*'}), 'Should return true on ok permission check')
 })
 
-tap.test('Error conditions', function(t){
+tap.test('createCheck accepts a comma separated list as arguments.', function(t) {
+  t.plan(2)
+  var f1 = a.createCheck('resource.create, upload.create')
+  t.type(f1, 'function', 'Should return a function')
+  t.ok(f1({resource: ['create'], upload: ['*'], event: '*'}), 'Should return true on ok permission check')
+})
+
+tap.test('returned createCheck function accepts a comma separated list as arguments.', function(t) {
+  t.plan(2)
+  var f1 = a.createCheck('resource.create, upload.create')
+  t.type(f1, 'function', 'Should return a function')
+  t.ok(f1('resource.create, upload.*, event.*'), 'Should return true on ok permission check')
+})
+
+tap.test('returned createCheck function accepts an array arguments.', function(t) {
+  t.plan(2)
+  var f1 = a.createCheck('resource.create, upload.create')
+  t.type(f1, 'function', 'Should return a function')
+  t.ok(f1(['resource.create', 'upload.*', 'event.*']), 'Should return true on ok permission check')
+})
+
+tap.test('returned createCheck function uses empty array when passed a number', function(t) {
+  t.plan(2)
+  var f1 = a.createCheck('resource.create, upload.create')
+  t.type(f1, 'function', 'Should return a function')
+  t.notOk(f1(6), 'Should return false on bad permission check')
+})
+
+tap.test('Throws when supplied permission is not in the available permission set', function(t){
   t.plan(1)
   var simple = {resource: ['create', 'read'], event: ['create', 'read']}
   var b = matrixAuth(simple)
   t.throws(function() {
     b.createCheck(['platform.create'])
+  }, 'Throws when requested permission not in supplied permissions.')
+})
+
+tap.test('Throws when supplied permission is junk', function(t){
+  t.plan(1)
+  var simple = {resource: ['create', 'read'], event: ['create', 'read']}
+  var b = matrixAuth(simple)
+  t.throws(function() {
+    b.createCheck('asdlaskkas;;la;kas;lkd;las;ldkas[podk-oiasdpojas')
   }, 'Throws when requested permission not in supplied permissions.')
 })
