@@ -2,6 +2,9 @@
 
 Node based permission checks in Node.
 
+[![Build Status](https://travis-ci.org/PaperElectron/matrix-authorization.svg?branch=master)](https://travis-ci.org/PaperElectron/matrix-authorization)
+
+
 ### API
 ```javascript
 /*
