@@ -1,6 +1,6 @@
 {
   "name": "matrix-authorization",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A permissions based matrix authorization strategy.",
   "main": "index.js",
   "scripts": {
