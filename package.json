@@ -4,6 +4,7 @@
   "description": "A permissions based matrix authorization strategy.",
   "main": "index.js",
   "scripts": {
+    "benchmark": "NODE_ENV=test node test/benchmark/index.js",
     "test": "NODE_ENV=test tap -R spec --cov test/unit/*.js test/integration/**/*.js",
     "test-unit": "NODE_ENV=test tap -R spec --cov test/unit/*.js",
     "test-integration": "NODE_ENV=test tap -R spec --cov test/integration/**/*.js",
@@ -25,6 +26,8 @@
     "lodash": "^4.13.1"
   },
   "devDependencies": {
+    "benchmark": "^2.1.0",
+    "microtime": "^2.1.1",
     "tap": "^5.8.0"
   },
   "directories": {
