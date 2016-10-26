@@ -1,20 +1,23 @@
 language: node_js
 node_js:
-  - "0.10"
-  - "0.12"
-  - "1.0"
-  - "2.0"
-  - "3.0"
-  - "4.0"
-  - "6.0"
-  - "node"
+- '0.10'
+- '0.12'
+- '1.0'
+- '2.0'
+- '3.0'
+- '4.0'
+- '6.0'
+- node
 sudo: false
 script: npm test
 env:
-  - CXX=g++-4.8
+- CXX=g++-4.8
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
+    - g++-4.8
+notifications:
+  slack:
+    secure: DryJjEL2pHyodDvxx5rkoCXBwJrUbjvSXR5cbqQlpcAXYp0aRoSWKyL+Zzmis2rJ/R6hFMGrTy2ZJZ3p5H9/g4ei6Ks/dwJf6lDZScOvWfagWhwd6qxsxqO08eqZpnnr8mIXEPlUk/E0HWMFPM+rX8IMgRdpl3QmZTcIuhI0A2ByVxFIXASVQMXdDwuENzs+Gd3x3+mlSLR2aKdoOJPMK0vnH9ND3Mjgb/C1TDi/CIbh30QdlwSQjqRV73EitrgYD5bPnGEWRn5dVjYCkuWjcoI+jm5FIdnA9YwIBrKpbJR/wg/un0NmvgEXpF3B/YuEfP22k/Kvu2O5p/1HAvajfLKmvoyppWAmCKc04TqQSFpLynbTzDN9HxuSIgrC3e6gQqzjlJu4yHEmsbZbbK3vQ831eyfir+610CBx7gYAYK1i09YxwtQHeQ4MC0BShqPhWeEo2viY3EJrgvZEnvE8+1lps7izi7a/frf3dxZ+1m7sNt5u/9M+finmiFDuFCetpL/VPLJ23CRtgN24pbwYqejVsO720+4Z+4S+FIX807Ly69cUvDwoDinvxo6aa0fhYTqq1+/OXXDDPF/u/XhxBvFvN14NmneSv3JU7pfPd78FQOjLJzfb0ei1npnck64s0Fxc03p4uvKvoFww7MuhdoOYjgKkYhfD+m4HOZyghhc=
